@@ -1,5 +1,5 @@
 {
-  "name": "zap-gpt",
+  "name": "mmkbot",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
@@ -7,8 +7,8 @@
     "config": "node ./setup.js",
     "dev": "tsx watch src/index.ts",
     "build": "tsup src/index.ts --no-splitting",
-    "start": "npm run build && npx pm2 start dist/index.cjs --name zap-gpt --no-daemon",
-    "stop": "npx pm2 delete zap-gpt",
+    "start": "npm run build && npx pm2 start dist/index.cjs --name mmkbot --no-daemon",
+    "stop": "npx pm2 delete mmkbot",
     "obfuscate": "javascript-obfuscator dist/index.js --string-array false --control-flow-flattening false --dead-code-injection false --debug-protection false"
   },
   "keywords": [],
