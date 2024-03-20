@@ -70,10 +70,11 @@ wppconnect
 async function start(client: wppconnect.Whatsapp): Promise<void> {
   client.onMessage((message) => {
     (async () => {
+      const msg = message
       if (
         message.isGroupMsg &&
         message.chatId !== 'status@broadcast' &&
-        message.body.includes('/duda')
+        msg.body.includes('/duda')
       ) {
         const chatId = message.chatId;
 
