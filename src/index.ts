@@ -70,11 +70,11 @@ wppconnect
 async function start(client: wppconnect.Whatsapp): Promise<void> {
   client.onMessage((message) => {
     (async () => {
-      const msg = message
+      const msg = message;
       if (
+        msg.body.includes('/duda') &&
         message.isGroupMsg &&
-        message.chatId !== 'status@broadcast' &&
-        msg.body.includes('/duda')
+        message.chatId !== 'status@broadcast'
       ) {
         const chatId = message.chatId;
 
@@ -245,10 +245,7 @@ async function start(client: wppconnect.Whatsapp): Promise<void> {
           )
         );
       }
-      if (
-        !message.isGroupMsg &&
-        message.chatId !== 'status@broadcast'
-      ) {
+      if (!message.isGroupMsg && message.chatId !== 'status@broadcast') {
         const chatId = message.chatId;
 
         if (excludedNumbersIntervention.has(chatId)) {
